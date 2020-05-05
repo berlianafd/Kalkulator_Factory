@@ -5,397 +5,686 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@color/black"
     tools:context=".MainActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical"
-            android:layout_marginTop="20pt"
-            android:layout_marginLeft="20pt"
-            android:layout_marginRight="20pt"
-            android:layout_marginBottom="15dp">
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Factor (Wf):"
-                android:layout_marginTop="13dp"
-                android:textStyle="bold"
-                android:textSize="10pt"
-                android:textColor="@color/white"/>
-            <EditText
-                android:id="@+id/wf"
-                android:editable="false"
-                android:textColor="@color/white"
-                android:layout_width="78pt"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="3pt"
-                android:paddingLeft="5pt"
-                android:paddingBottom="3pt"
-                android:textSize="10pt" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Parameter (Wp):"
-                android:textSize="10pt"
-                android:textStyle="bold"
-                android:textColor="@color/white"
-                android:layout_marginTop="13dp"/>
-            <EditText
-                android:layout_width="78pt"
-                android:layout_height="wrap_content"
-                android:textColor="@color/white"
-                android:id="@+id/wp"
-                android:editable="false"
-                android:layout_marginTop="3pt"
-                android:paddingLeft="5pt"
-                android:paddingBottom="3pt"
-                android:textSize="10pt"/>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Result:"
-                android:textSize="10pt"
-                android:textStyle="bold"
-                android:textColor="@color/white"
-                android:layout_marginTop="13dp"/>
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/result"
-                android:textColor="@color/colorAccent"
-                android:maxLength="8"
-                android:editable="false"
-                android:textSize="20pt"
-                android:layout_marginTop="3pt"
-                android:paddingLeft="5pt"
-                android:paddingBottom="3pt"/>
-        </LinearLayout>
-
+<!--        identitas trafo-->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="center"
-            android:orientation="horizontal">
-            <Button
-                android:id="@+id/ac_input_factor"
-                android:layout_width="75pt"
-                android:layout_height="30pt"
-                android:textSize="14pt"
-                android:background="@drawable/button_accent_rounded"
-                android:layout_margin="3pt"
-                android:textColor="@color/black"
-                android:text="AC"/>
-            <ImageButton
-                android:id="@+id/del_input_factor"
-                android:layout_width="75pt"
-                android:layout_height="30pt"
-                android:src="@drawable/back_medium"
-                android:background="@drawable/button_dark_rounded"
-                android:layout_margin="3pt"
-                android:textColor="@color/colorAccent"/>
-            <ImageButton
-                android:id="@+id/del_input_param"
+            android:orientation="vertical"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp">
+
+            <RelativeLayout
+                android:id="@+id/button_trafoId"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="TRAFO IDENTITY"
+                    android:padding="10dp"
+                    android:textStyle="bold"
+                    android:textSize="8pt"
+                    android:textColor="@color/white"
+                    android:background="@drawable/button_accent_rounded"/>
+                <ImageView
+                    android:id="@+id/arrow_trafoId"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_margin="10dp"
+                    android:layout_alignParentRight="true"
+                    android:src="@drawable/arrow_up"/>
+            </RelativeLayout>
+
+            <LinearLayout
+                android:id="@+id/konten_trafoId"
                 android:visibility="gone"
-                android:layout_width="75pt"
-                android:layout_height="30pt"
-                android:src="@drawable/back_medium"
-                android:background="@drawable/button_dark_rounded"
-                android:layout_margin="3pt"
-                android:textColor="@color/colorAccent"/>
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/inputfactor"
-            android:visibility="visible"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:layout_gravity="center"
-            android:layout_margin="10dp">
-            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:gravity="center"
-                android:orientation="horizontal">
-                <Button
-                    android:id="@+id/oqf"
-                    android:layout_width="48pt"
-                    android:layout_height="55pt"
-                    android:textSize="12pt"
-                    android:layout_margin="3pt"
-                    android:background="@drawable/button_rounded"
+                android:orientation="vertical"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="10dp">
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Name"
+                        android:textStyle="bold"
+                        android:textSize="8pt"
+                        android:layout_alignParentBottom="true"
+                        android:textColor="@color/black"/>
+
+                    <EditText
+                        android:id="@+id/input_name"
+                        android:layout_width="125dp"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"/>
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Unit"
+                        android:textStyle="bold"
+                        android:textSize="8pt"
+                        android:layout_alignParentBottom="true"
+                        android:textColor="@color/black"/>
+
+                    <EditText
+                        android:id="@+id/input_unit"
+                        android:layout_width="125dp"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"/>
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Merk"
+                        android:textStyle="bold"
+                        android:textSize="8pt"
+                        android:layout_alignParentBottom="true"
+                        android:textColor="@color/black"/>
+
+                    <EditText
+                        android:id="@+id/input_merk"
+                        android:layout_width="125dp"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"/>
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Voltage"
+                        android:textStyle="bold"
+                        android:textSize="8pt"
+                        android:layout_alignParentBottom="true"
+                        android:textColor="@color/black"/>
+
+                    <EditText
+                        android:id="@+id/input_voltage"
+                        android:layout_width="125dp"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"/>
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Power"
+                        android:textStyle="bold"
+                        android:textSize="8pt"
+                        android:layout_alignParentBottom="true"
+                        android:textColor="@color/black"/>
+
+                    <EditText
+                        android:id="@+id/input_power"
+                        android:layout_width="125dp"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"/>
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Years of Operation"
+                        android:textStyle="bold"
+                        android:textSize="8pt"
+                        android:layout_alignParentBottom="true"
+                        android:textColor="@color/black"/>
+
+                    <EditText
+                        android:id="@+id/input_yop"
+                        android:layout_width="125dp"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"/>
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Pembebanan"
+                        android:textStyle="bold"
+                        android:textSize="8pt"
+                        android:layout_alignParentBottom="true"
+                        android:textColor="@color/black"/>
+
+                    <EditText
+                        android:id="@+id/input_pembebanan"
+                        android:layout_width="125dp"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"/>
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Hotspot Temperature"
+                        android:textStyle="bold"
+                        android:textSize="8pt"
+                        android:layout_alignParentBottom="true"
+                        android:textColor="@color/black"/>
+
+                    <EditText
+                        android:id="@+id/input_hts"
+                        android:layout_width="125dp"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"/>
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Measurement Date"
+                        android:textStyle="bold"
+                        android:textSize="8pt"
+                        android:layout_alignParentBottom="true"
+                        android:textColor="@color/black"/>
+
+                    <EditText
+                        android:id="@+id/input_meaDate"
+                        android:layout_width="125dp"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"/>
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Paper Type"
+                        android:textStyle="bold"
+                        android:textSize="8pt"
+                        android:textColor="@color/black"/>
+
+                    <RadioGroup
+                        android:id="@+id/rgrup_paperType"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true">
+
+                        <RadioButton
+                            android:id="@+id/rbutton_Kraft"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:checked="true"
+                            android:text="Kraft Paper"/>
+
+                        <RadioButton
+                            android:id="@+id/rbutton_TUP"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Thermally Upgraded Paper" />
+                    </RadioGroup>
+
+                </RelativeLayout>
+            </LinearLayout>
+        </LinearLayout>
+<!--        dielectric char-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginTop="30dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp">
+
+            <RelativeLayout
+                android:id="@+id/button_dc"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="DIELECTRIC CHARACTERISTIC"
+                    android:padding="10dp"
+                    android:textStyle="bold"
+                    android:textSize="8pt"
                     android:textColor="@color/white"
-                    android:text="oqf"/>
-                <Button
-                    android:id="@+id/ff"
-                    android:layout_width="48pt"
-                    android:layout_height="55pt"
-                    android:textSize="12pt"
-                    android:layout_margin="3pt"
-                    android:background="@drawable/button_rounded"
-                    android:textColor="@color/white"
-                    android:text="ff"/>
-                <Button
-                    android:id="@+id/pcf"
-                    android:layout_width="48pt"
-                    android:layout_height="55pt"
-                    android:textSize="12pt"
-                    android:layout_margin="3pt"
-                    android:background="@drawable/button_rounded"
-                    android:textColor="@color/white"
-                    android:text="pcf"/>
+                    android:background="@drawable/button_accent_rounded"/>
+                <ImageView
+                    android:id="@+id/arrow_dc"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_margin="10dp"
+                    android:layout_alignParentRight="true"
+                    android:src="@drawable/arrow_bottom"/>
+            </RelativeLayout>
+
+            <LinearLayout
+                android:id="@+id/konten_dc"
+                android:visibility="gone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="40dp">
+                <RelativeLayout
+                    android:id="@+id/baris_bdv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Voltage Breakdown (kV)"
+                        android:textStyle="bold"
+                        android:textSize="7pt"
+                        android:layout_alignParentBottom="true"
+                        android:textColor="@color/black"/>
+
+                    <EditText
+                        android:id="@+id/input_bdv"
+                        android:layout_width="125dp"
+                        android:layout_height="wrap_content"
+
+                        android:layout_alignParentRight="true"/>
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/baris_water"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Water Content (%)"
+                        android:textStyle="bold"
+                        android:textSize="8pt"
+                        android:layout_alignParentBottom="true"
+                        android:textColor="@color/black"/>
+
+                    <EditText
+                        android:id="@+id/input_water"
+                        android:layout_width="125dp"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"/>
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/baris_acid"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Acidity* (mgKOH/g)"
+                        android:textStyle="bold"
+                        android:textSize="8pt"
+                        android:layout_alignParentBottom="true"
+                        android:textColor="@color/black"/>
+
+                    <EditText
+                        android:id="@+id/input_acid"
+                        android:layout_width="125dp"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"/>
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/baris_ift"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Interfal Tension*"
+                        android:textStyle="bold"
+                        android:textSize="8pt"
+                        android:layout_alignParentBottom="true"
+                        android:textColor="@color/black"/>
+
+                    <EditText
+                        android:id="@+id/input_ift"
+                        android:layout_width="125dp"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"/>
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/baris_col"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Color (0-10)"
+                        android:textStyle="bold"
+                        android:textSize="8pt"
+                        android:layout_alignParentBottom="true"
+                        android:textColor="@color/black"/>
+
+                    <EditText
+                        android:id="@+id/input_col"
+                        android:layout_width="125dp"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"/>
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/baris_ddf"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="DDF"
+                        android:textStyle="bold"
+                        android:textSize="8pt"
+                        android:layout_alignParentBottom="true"
+                        android:textColor="@color/black"/>
+
+                    <EditText
+                        android:id="@+id/input_ddf"
+                        android:layout_width="125dp"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"/>
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/baris_sed"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Sediment (%)"
+                        android:textStyle="bold"
+                        android:textSize="8pt"
+                        android:layout_alignParentBottom="true"
+                        android:textColor="@color/black"/>
+
+                    <EditText
+                        android:id="@+id/input_sed"
+                        android:layout_width="125dp"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"/>
+                </RelativeLayout>
             </LinearLayout>
         </LinearLayout>
 
-        <!--    Input Parameter Factor Oil Quality-->
+<!--        dissolved gasses-->
         <LinearLayout
-            android:id="@+id/parameter_oil_quality"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="horizontal"
-            android:gravity="center"
-            android:visibility="gone"
-            android:layout_gravity="center"
-            android:layout_margin="10dp">
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp">
+
+            <RelativeLayout
+                android:id="@+id/button_dg"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="DISSOLVED GASSES"
+                    android:padding="10dp"
+                    android:textStyle="bold"
+                    android:textSize="8pt"
+                    android:textColor="@color/white"
+                    android:background="@drawable/button_accent_rounded"/>
+                <ImageView
+                    android:id="@+id/arrow_dg"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_margin="10dp"
+                    android:layout_alignParentRight="true"
+                    android:src="@drawable/arrow_bottom"/>
+            </RelativeLayout>
+
             <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:orientation="vertical">
-                <LinearLayout
+                android:id="@+id/konten_dg"
+                android:visibility="gone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="40dp">
+                <RelativeLayout
+                    android:id="@+id/baris_h2"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal">
-                    <Button
-                        android:id="@+id/bdv_param_oq"
-                        android:layout_width="48pt"
-                        android:layout_height="30pt"
-                        android:textSize="10pt"
-                        android:layout_margin="3pt"
-                        android:background="@drawable/button_rounded"
-                        android:textColor="@color/white"
-                        android:text="bdv"/>
-                    <Button
-                        android:id="@+id/water_param_oq"
-                        android:layout_width="48pt"
-                        android:layout_height="30pt"
-                        android:textSize="10pt"
-                        android:layout_margin="3pt"
-                        android:background="@drawable/button_rounded"
-                        android:textColor="@color/white"
-                        android:text="WATER"/>
-                    <Button
-                        android:id="@+id/acid_param_oq"
-                        android:layout_width="48pt"
-                        android:layout_height="30pt"
-                        android:textSize="10pt"
-                        android:layout_margin="3pt"
-                        android:background="@drawable/button_rounded"
-                        android:textColor="@color/white"
-                        android:text="ACID"/>
-                </LinearLayout>
-                <LinearLayout
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="H2"
+                        android:textStyle="bold"
+                        android:textSize="8pt"
+                        android:layout_alignParentBottom="true"
+                        android:textColor="@color/black"/>
+
+                    <EditText
+                        android:id="@+id/input_h2"
+                        android:layout_width="125dp"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"/>
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/baris_ch4"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal">
-                    <Button
-                        android:id="@+id/ift_param_oq"
-                        android:layout_width="48pt"
-                        android:layout_height="30pt"
-                        android:textSize="10pt"
-                        android:layout_margin="3pt"
-                        android:background="@drawable/button_rounded"
-                        android:textColor="@color/white"
-                        android:text="IFT"/>
-                    <Button
-                        android:id="@+id/col_param_oq"
-                        android:layout_width="48pt"
-                        android:layout_height="30pt"
-                        android:textSize="10pt"
-                        android:layout_margin="3pt"
-                        android:background="@drawable/button_rounded"
-                        android:textColor="@color/white"
-                        android:text="COL"/>
-                    <Button
-                        android:id="@+id/ddf_param_oq"
-                        android:layout_width="48pt"
-                        android:layout_height="30pt"
-                        android:textSize="10pt"
-                        android:layout_margin="3pt"
-                        android:background="@drawable/button_rounded"
-                        android:textColor="@color/white"
-                        android:text="DDF"/>
-                </LinearLayout>
-                <LinearLayout
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="CH4"
+                        android:textStyle="bold"
+                        android:textSize="8pt"
+                        android:layout_alignParentBottom="true"
+                        android:textColor="@color/black"/>
+
+                    <EditText
+                        android:id="@+id/input_ch4"
+                        android:layout_width="125dp"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"/>
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/baris_c2h6"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:layout_gravity="center">
-                    <Button
-                        android:id="@+id/sed_param_oq"
-                        android:layout_width="48pt"
-                        android:layout_height="30pt"
-                        android:textSize="10pt"
-                        android:layout_margin="3pt"
-                        android:background="@drawable/button_rounded"
-                        android:textColor="@color/white"
-                        android:text="SED"/>
-                </LinearLayout>
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="C2H6"
+                        android:textStyle="bold"
+                        android:textSize="8pt"
+                        android:layout_alignParentBottom="true"
+                        android:textColor="@color/black"/>
+
+                    <EditText
+                        android:id="@+id/input_c2h6"
+                        android:layout_width="125dp"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"/>
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/baris_c2h4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="C2H4"
+                        android:textStyle="bold"
+                        android:textSize="8pt"
+                        android:layout_alignParentBottom="true"
+                        android:textColor="@color/black"/>
+
+                    <EditText
+                        android:id="@+id/input_c2h4"
+                        android:layout_width="125dp"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"/>
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/baris_c2h2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="C2H2"
+                        android:textStyle="bold"
+                        android:textSize="8pt"
+                        android:layout_alignParentBottom="true"
+                        android:textColor="@color/black"/>
+
+                    <EditText
+                        android:id="@+id/input_c2h2"
+                        android:layout_width="125dp"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"/>
+                </RelativeLayout>
             </LinearLayout>
         </LinearLayout>
 
-        <!--        input parameter factor faults-->
+<!--        furan-->
         <LinearLayout
-            android:id="@+id/parameter_faults"
-            android:visibility="gone"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="horizontal"
-            android:gravity="center"
-            android:layout_gravity="center"
-            android:layout_margin="10dp">
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp">
+
+            <RelativeLayout
+                android:id="@+id/button_furan"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="FURAN"
+                    android:padding="10dp"
+                    android:textStyle="bold"
+                    android:textSize="8pt"
+                    android:textColor="@color/white"
+                    android:background="@drawable/button_accent_rounded"/>
+                <ImageView
+                    android:id="@+id/arrow_furan"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_margin="10dp"
+                    android:layout_alignParentRight="true"
+                    android:src="@drawable/arrow_bottom"/>
+            </RelativeLayout>
+
             <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:orientation="vertical">
-                <LinearLayout
+                android:id="@+id/konten_furan"
+                android:visibility="gone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="40dp">
+                <RelativeLayout
+                    android:id="@+id/baris_furan"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal">
-                    <Button
-                        android:id="@+id/h2_faults"
-                        android:layout_width="75pt"
-                        android:layout_height="30pt"
-                        android:textSize="10pt"
-                        android:layout_margin="3pt"
-                        android:background="@drawable/button_rounded"
-                        android:textColor="@color/white"
-                        android:text="h2"/>
-                    <Button
-                        android:id="@+id/ch4_faults"
-                        android:layout_width="75pt"
-                        android:layout_height="30pt"
-                        android:textSize="10pt"
-                        android:layout_margin="3pt"
-                        android:background="@drawable/button_rounded"
-                        android:textColor="@color/white"
-                        android:text="ch4"/>
-                </LinearLayout>
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal">
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="2FAL"
+                        android:textStyle="bold"
+                        android:textSize="8pt"
+                        android:layout_alignParentBottom="true"
+                        android:textColor="@color/black"/>
 
-                    <Button
-                        android:id="@+id/c2h4_faults"
-                        android:layout_width="75pt"
-                        android:layout_height="30pt"
-                        android:textSize="10pt"
-                        android:layout_margin="3pt"
-                        android:background="@drawable/button_rounded"
-                        android:textColor="@color/white"
-                        android:text="c2h4"/>
-                    <Button
-                        android:id="@+id/c2h6_faults"
-                        android:layout_width="75pt"
-                        android:layout_height="30pt"
-                        android:textSize="10pt"
-                        android:layout_margin="3pt"
-                        android:background="@drawable/button_rounded"
-                        android:textColor="@color/white"
-                        android:text="c2h6"/>
-
-                </LinearLayout>
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:layout_gravity="center">
-
-                    <Button
-                        android:id="@+id/c2h2_faults"
-                        android:layout_width="75pt"
-                        android:layout_height="30pt"
-                        android:textSize="10pt"
-                        android:layout_margin="3pt"
-                        android:background="@drawable/button_rounded"
-                        android:textColor="@color/white"
-                        android:text="c2h2"/>
-                </LinearLayout>
+                    <EditText
+                        android:id="@+id/input_fal"
+                        android:layout_width="125dp"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"/>
+                </RelativeLayout>
             </LinearLayout>
-
         </LinearLayout>
 
-        <!--        input parameter factor paper-->
+<!--        Derajat Polimer Kertas-->
         <LinearLayout
-            android:id="@+id/parameter_paper"
-            android:visibility="gone"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="horizontal"
-            android:gravity="center"
-            android:layout_gravity="center"
-            android:layout_margin="10dp">
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:orientation="vertical">
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal">
-                    <Button
-                        android:id="@+id/coco2_paper"
-                        android:layout_width="75pt"
-                        android:layout_height="30pt"
-                        android:textSize="10pt"
-                        android:layout_margin="3pt"
-                        android:background="@drawable/button_rounded"
-                        android:textColor="@color/white"
-                        android:text="coco2"/>
-                    <Button
-                        android:id="@+id/fal_paper"
-                        android:layout_width="75pt"
-                        android:layout_height="30pt"
-                        android:textSize="10pt"
-                        android:layout_margin="3pt"
-                        android:background="@drawable/button_rounded"
-                        android:textColor="@color/white"
-                        android:text="2fal"/>
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp">
 
-                </LinearLayout>
-                <LinearLayout
-                    android:layout_width="wrap_content"
+            <RelativeLayout
+                android:id="@+id/button_dpk"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal">
-                    <Button
-                        android:id="@+id/age_paper"
-                        android:layout_width="75pt"
-                        android:layout_height="30pt"
-                        android:textSize="10pt"
-                        android:layout_margin="3pt"
-                        android:background="@drawable/button_rounded"
-                        android:textColor="@color/white"
-                        android:text="age"/>
-                    <Button
-                        android:id="@+id/dp_paper"
-                        android:layout_width="75pt"
-                        android:layout_height="30pt"
-                        android:textSize="10pt"
-                        android:layout_margin="3pt"
-                        android:background="@drawable/button_rounded"
-                        android:textColor="@color/white"
-                        android:text="dp"/>
-                </LinearLayout>
+                    android:text="Derajat Polimerisasi Kertas"
+                    android:padding="10dp"
+                    android:textStyle="bold"
+                    android:textSize="8pt"
+                    android:textColor="@color/white"
+                    android:background="@drawable/button_accent_rounded"/>
+                <ImageView
+                    android:id="@+id/arrow_dpk"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_margin="10dp"
+                    android:layout_alignParentRight="true"
+                    android:src="@drawable/arrow_bottom"/>
+            </RelativeLayout>
+
+            <LinearLayout
+                android:id="@+id/konten_dpk"
+                android:visibility="gone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="40dp">
             </LinearLayout>
         </LinearLayout>
 

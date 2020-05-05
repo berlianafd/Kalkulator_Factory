@@ -3,10 +3,10 @@
 
     <item android:drawable="@color/colorPrimary"/>
 
-    <item android:gravity="center" android:width="100dp" android:height="100dp">
+    <item android:gravity="center" android:width="70dp" android:height="100dp">
         <bitmap
             android:gravity="fill_horizontal|fill_vertical"
-            android:src="@drawable/calculator"/>
+            android:src="@drawable/logo"/>
     </item>
 
 </layer-list>
